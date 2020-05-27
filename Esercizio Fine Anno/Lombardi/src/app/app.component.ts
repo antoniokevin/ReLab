@@ -68,7 +68,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.obsGeoData = this.http.get<GeoFeatureCollection>('https://3000-ff928705-26b4-41f1-956a-9e82ec83b595.ws-eu01.gitpod.io/');
+    this.obsGeoData = this.http.get<GeoFeatureCollection>('https://3000-ef60a25e-a01a-43d1-9d27-449bc71fb565.ws-eu01.gitpod.io/');
     this.obsGeoData.subscribe(this.prepareData);
   }
 
@@ -99,7 +99,7 @@ export class AppComponent implements OnInit {
     //Posso riusare lo stesso observable e lo stesso metodo di gestione del metodo
     //cambiaFoglio poichè riceverò lo stesso tipo di dati
     //Divido l'url andando a capo per questioni di leggibilità non perchè sia necessario
-    this.obsCiVett = this.http.get<Ci_vettore[]>(`https://3000-ff928705-26b4-41f1-956a-9e82ec83b595.ws-eu01.gitpod.io/ci_geovettore/
+    this.obsCiVett = this.http.get<Ci_vettore[]>(`https://3000-ef60a25e-a01a-43d1-9d27-449bc71fb565.ws-eu01.gitpod.io/ci_geovettore/
     ${this.circleLat}/
     ${this.circleLng}/
     ${raggioInGradi}`);
@@ -111,7 +111,7 @@ export class AppComponent implements OnInit {
   cambiaFoglio(foglio) : boolean
   {
     let val = foglio.value; // prendo il valore da un componente html, come foglio che è un input tag
-    this.obsCiVett = this.http.get<Ci_vettore[]>(`https://3000-ff928705-26b4-41f1-956a-9e82ec83b595.ws-eu01.gitpod.io/ci_vettore/${val}`);  //prendo i dati del foglio scelto dal sito dove è hostato il server
+    this.obsCiVett = this.http.get<Ci_vettore[]>(`https://3000-ef60a25e-a01a-43d1-9d27-449bc71fb565.ws-eu01.gitpod.io/ci_vettore/${val}`);  //prendo i dati del foglio scelto dal sito dove è hostato il server
     this.obsCiVett.subscribe(this.prepareCiVettData); //Invio i dati ottenuti all'observable che li aspetta. Questo modo di agire è detto asincrono
     console.log(val);
     return false;

@@ -26,6 +26,7 @@ export class AppComponent implements OnInit {
   circleLng: number = 0;
   maxRadius: number = 400; //Voglio evitare raggi troppo grossi
   radius : number = this.maxRadius; //Memorizzo il raggio del cerchio
+  // qua abbiamo impostati le variabili iniziali come ad esempio longitudine e latitudine e un maxradius che ci permette di evitare ricerche troppo complesse
 
   constructor(public http: HttpClient) {
   }
@@ -43,6 +44,7 @@ export class AppComponent implements OnInit {
     for (const iterator of data) { //Per ogni oggetto del vettore creoa un Marker
       let latTot = 0; //Uso queste due variabili per calcolare latitudine e longitudine media
     let lngTot = 0; //E centrare la mappa
+    // in questo metodo calcoliamo la longitudine e la latitudine totali e poi facciamo la media in modo che la mappa sia centrata
 
     console.log(data);
     this.markers = [];
@@ -65,6 +67,7 @@ export class AppComponent implements OnInit {
     this.lat = this.circleLat; //Sposto il centro della mappa qui
     this.lng = this.circleLng;
     this.zoom = 15;  //Zoom sul cerchio
+    // nel metodo mapclicked invece faccio si che il centro del cerchio che quello della mappa si spostino in base dove clicchiamo
   }
 
   ngOnInit() {
@@ -81,6 +84,7 @@ export class AppComponent implements OnInit {
   {
     console.log(circleCenter); //Voglio ottenere solo i valori entro questo cerchio
     console.log(this.radius);
+    // serve per gestire la possibilità di effettuare il doppioclick
 
     this.circleLat = circleCenter.coords.lat; //Aggiorno le coordinate del cerchio
     this.circleLng = circleCenter.coords.lng; //Aggiorno le coordinate del cerchio
@@ -90,6 +94,7 @@ export class AppComponent implements OnInit {
     {
       console.log("area selezionata troppo vasta sarà reimpostata a maxRadius");
        this.radius = this.maxRadius;
+       // qua troviamo l'if che gestisce il maxradius ovvero non permette che il raggio superi il limite di 400
     }
     console.log ("raggio in gradi " + (this.radius * 0.00001)/1.1132)
 
@@ -111,10 +116,11 @@ export class AppComponent implements OnInit {
   cambiaFoglio(foglio) : boolean
   {
     let val = foglio.value; // prendo il valore da un componente html, come foglio che è un input tag
-    this.obsCiVett = this.http.get<Ci_vettore[]>(`https://3000-ef60a25e-a01a-43d1-9d27-449bc71fb565.ws-eu01.gitpod.io/ci_vettore/${val}`);  //prendo i dati del foglio scelto dal sito dove è hostato il server
-    this.obsCiVett.subscribe(this.prepareCiVettData); //Invio i dati ottenuti all'observable che li aspetta. Questo modo di agire è detto asincrono
+    this.obsCiVett = this.http.get<Ci_vettore[]>(`https://3000-ef60a25e-a01a-43d1-9d27-449bc71fb565.ws-eu01.gitpod.io/ci_vettore/${val}`);  // effettuo una richiesta http prendo i dati del foglio scelto dal sito dove è hostato il server
+    this.obsCiVett.subscribe(this.prepareCiVettData); //e infine lanciamo il metodo preparecivettdata dopo l'arrivo dei dati
     console.log(val);
     return false;
+    //
   }
 
   styleFunc = (feature) => {

@@ -11,13 +11,17 @@
   <agm-data-layer [geoJson]="geoJsonObject" [style]="styleFunc">
   </agm-data-layer>
   <!--Aggiungi un cerchio alla mappa-->
+  <!-- qua abbiamo aggiunto il tagagm-circle e passiamo il raggio la latitudine e la longitudine e il colore-->
+  <!-- con questi due parametri true editable e circledraggable permettiamo all utente di poter ridimensionare e spostare il cerchio sulla mappa-->
   <agm-circle [latitude]="circleLat" [longitude]="circleLng"
       [radius]="radius"
       [fillColor]="'red'"
       [circleDraggable]="true"
       [editable]="true"
+      
       (radiusChange) = circleRedim($event)
       (circleDblClick) = circleDoubleClicked($event)
+
       >
   </agm-circle>
 
@@ -33,5 +37,6 @@
   <button (click)="cambiaFoglio(foglio)"> <!--Passiamo le variabili come parametro -->
     Cambia
   </button>
+  <!-- abbiamo aggiunto il bottone cambia ci permettera di cambiare il nostro foglio-->
 </form>
 

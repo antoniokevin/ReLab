@@ -6,5 +6,5 @@ export class Ci_vettore {
     EP_H_ND: number;
     CI_VETTORE: string;
     FOGLIO: string;
-    SEZ: number;
+    SEZ: number; 
 }

@@ -13,7 +13,7 @@ export class Marker {
         {
           this.icon = new Icon ('./assets/immagini/hex-burner-16.ico', 24 );
           this.label = "";
-          return;
+          return; 
         }
     }
 }

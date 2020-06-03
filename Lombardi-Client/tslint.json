@@ -22,7 +22,7 @@
       "app",
       "camelCase"
     ],
-    "component-selector": [
+    "component-selector": [ 
       true,
       "element",
       "app",

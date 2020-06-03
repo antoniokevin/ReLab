@@ -11,6 +11,6 @@ export class Icon { //Commenta qui
 
 export class ScaledSize { //Commenta qui
     constructor(
-    public width:  number,
+    public width:  number, 
     public height: number){}
 }

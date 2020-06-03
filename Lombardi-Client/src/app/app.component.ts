@@ -15,7 +15,7 @@ import { MouseEvent } from '@agm/core';
 export class AppComponent implements OnInit {
   title = 'ang-maps';
   // google maps zoom level
-  zoom: number = 12;
+  zoom: number = 12; 
   geoJsonObject: GeoFeatureCollection; //Oggetto che conterrà il vettore di GeoJson
   fillColor: string = "#FF0000";  //Colore delle zone catastali
   obsGeoData: Observable<GeoFeatureCollection>;

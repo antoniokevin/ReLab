@@ -28,7 +28,7 @@ export class AppComponent implements OnInit {
   circleLng: number = 0;
   maxRadius: number = 400; //Voglio evitare raggi troppo grossi
   radius : number = this.maxRadius; //Memorizzo il raggio del cerchio
-  serverUrl : string = "https://3000-e3f02582-08e5-41bd-b548-af0bc36b4dc5.ws-eu01.gitpod.io/"
+  serverUrl : string = "https://3000-e3c611a1-480d-4dee-a034-4933d899304b.ws-eu01.gitpod.io/"
 
   constructor(public http: HttpClient) {
   }
@@ -39,9 +39,9 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    //this.obsGeoData = this.http.get<GeoFeatureCollection>("https://3000-e3f02582-08e5-41bd-b548-af0bc36b4dc5.ws-eu01.gitpod.io/");
+    //this.obsGeoData = this.http.get<GeoFeatureCollection>("https://3000-e3c611a1-480d-4dee-a034-4933d899304b.ws-eu01.gitpod.io/");
     //this.obsGeoData.subscribe(this.prepareData);
-    //this.obsCiVett = this.http.get<Ci_vettore[]>("https://3000-b86c5fa3-3aca-4fd2-9619-43571d8ec1e4.ws-eu01.gitpod.io/ci_vettore/90");
+    //this.obsCiVett = this.http.get<Ci_vettore[]>("https://3000-e3c611a1-480d-4dee-a034-4933d899304b.ws-eu01.gitpod.io/ci_vettore/90");
     //this.obsCiVett.subscribe(this.prepareCiVettData);
   }
 
@@ -108,7 +108,7 @@ export class AppComponent implements OnInit {
   cambiaFoglio(foglio) : boolean
   {
     let val = foglio.value; //Commenta qui
-    this.obsCiVett = this.http.get<Ci_vettore[]>(`https://3000-e3f02582-08e5-41bd-b548-af0bc36b4dc5.ws-eu01.gitpod.io/ci_vettore/${val}`);  //Commenta qui
+    this.obsCiVett = this.http.get<Ci_vettore[]>(`https://3000-e3c611a1-480d-4dee-a034-4933d899304b.ws-eu01.gitpod.io/ci_vettore/${val}`);  //Commenta qui
     this.obsCiVett.subscribe(this.prepareCiVettData); //Commenta qui
     console.log(val);
     return false;

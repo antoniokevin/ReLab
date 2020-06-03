@@ -12,7 +12,7 @@ import {HttpClientModule} from '@angular/common/http';
   ],
   imports: [
     BrowserModule,
-    AgmCoreModule.forRoot({apiKey: 'AIzaSyBOtW-5KsaDrzQ41dtkFjPceCEu6Ny-B-s'}),
+    AgmCoreModule.forRoot({apiKey: 'AIzaSyAW-OauulkhAV-MmRUG37W2x4nAi05LJlE'}),
     HttpClientModule
   ],
   providers: [],
